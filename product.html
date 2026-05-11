@@ -32,6 +32,7 @@
         }
     </script>
     <style>
+        /* Layered Radial Backgrounds */
         body.dark {
             background: 
                 radial-gradient(circle at 12% 8%, rgba(236, 72, 153, 0.15), transparent 28%),
@@ -39,6 +40,7 @@
                 radial-gradient(circle at 50% 100%, rgba(37, 99, 235, 0.15), transparent 32%),
                 #070812;
         }
+        
         .dark .hero-bg {
             background: 
                 radial-gradient(circle at 12% 18%, rgba(168, 85, 247, 0.35), transparent 30%),
@@ -47,6 +49,8 @@
                 radial-gradient(circle at 30% 90%, rgba(236, 72, 153, 0.2), transparent 30%),
                 linear-gradient(135deg, #090014 0%, #080b24 45%, #160016 100%);
         }
+
+        /* 4-Color Gradient Text */
         .highlight-text {
             background: linear-gradient(90deg, #a855f7, #ec4899, #fb923c, #38bdf8);
             -webkit-background-clip: text;
@@ -54,18 +58,41 @@
             color: transparent;
             text-shadow: 0 0 30px rgba(236, 72, 153, 0.2);
         }
+
+        /* Smooth Glassmorphism */
         .glass {
             background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
+        
         .light .glass {
             background: rgba(255, 255, 255, 0.75);
             border: 1px solid rgba(0, 0, 0, 0.05);
             backdrop-filter: blur(12px);
         }
-        * { font-style: normal !important; }
+
+        /* Steps animation arrow */
+        @media (min-width: 768px) {
+            .step-connector::after {
+                content: '→';
+                position: absolute;
+                right: -20px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 24px;
+                opacity: 0.15;
+                color: currentColor;
+            }
+        }
+
+        /* Anti-Italic Global Fix */
+        * {
+            font-style: normal !important;
+        }
+
+        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #a855f7; border-radius: 10px; }
@@ -78,6 +105,7 @@
         <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
             <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center p-1 overflow-hidden shadow-lg border border-white/20">
+                    <!-- Gunakan URL Image Lo di sini -->
                     <img src="https://imersnesia.com/wp-content/uploads/2026/05/logoresellerrightfinal.png" alt="Logo" id="main-logo" class="w-full h-full object-contain">
                 </div>
                 <div>
@@ -86,7 +114,8 @@
                 </div>
             </div>
 
-            <div class="hidden md:flex items-center gap-8 text-sm font-bold opacity-80 font-body">
+            <!-- Header Menu updated with Katalog Active State -->
+            <div class="hidden md:flex items-center gap-10 text-sm font-bold opacity-80 font-body">
                 <a href="index.html" class="hover:text-brand-purple transition">Beranda</a>
                 <a href="product.html" class="text-brand-purple transition border-b-2 border-brand-purple/30 pb-1">Katalog</a>
                 <a href="index.html#sistem" class="hover:text-brand-purple transition">Sistem</a>
@@ -107,7 +136,7 @@
     </nav>
 
     <!-- PRODUCT HERO -->
-    <section class="hero-bg relative pt-48 pb-24 px-6 transition-all text-center">
+    <section class="hero-bg relative pt-48 pb-24 px-6 transition-all text-center min-h-[60vh] flex items-center justify-center">
         <div class="max-w-4xl mx-auto">
             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-brand-pink text-[10px] font-black mb-8 tracking-[0.2em] border-brand-pink/20 shadow-lg font-sans uppercase">
                 <i data-lucide="shopping-bag" class="w-3 h-3 fill-brand-pink"></i> Koleksi produk digital premium
@@ -122,52 +151,69 @@
         </div>
     </section>
 
-    <!-- PROMO SECTION -->
+    <!-- PENAWARAN KHUSUS (PROMO) -->
     <section class="py-20 px-6 max-w-7xl mx-auto">
         <div class="mb-12">
             <h2 class="text-2xl md:text-3xl font-black tracking-tight font-title text-slate-900 dark:text-white leading-tight">
                 Penawaran <span class="highlight-text">khusus minggu ini</span>
             </h2>
-            <div class="h-1 w-20 bg-gradient-to-r from-brand-orange to-brand-pink mt-4 rounded-full"></div>
+            <div class="h-1.5 w-24 bg-gradient-to-r from-brand-orange to-brand-pink mt-4 rounded-full"></div>
         </div>
 
         <div id="promo-container" class="grid md:grid-cols-3 gap-8">
-            <!-- Promo products will appear here dynamically -->
+            <!-- Promo products injected by script -->
         </div>
     </section>
 
-    <!-- PRODUCT CATALOG -->
+    <!-- KATALOG PRODUK -->
     <section class="py-12 px-6 max-w-7xl mx-auto mb-24">
-        <div class="mb-12 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div class="mb-12 flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-white/5 pb-8">
             <div>
                 <h2 class="text-2xl md:text-3xl font-black tracking-tight font-title text-slate-900 dark:text-white leading-tight">
                     Katalog <span class="highlight-text">produk digital</span>
                 </h2>
                 <p class="text-sm text-slate-500 font-medium font-body mt-2">Temukan produk digital yang cocok buat market lo.</p>
             </div>
+            <!-- Filter Dummy -->
             <div class="flex items-center gap-3 glass p-1.5 rounded-2xl border-white/10">
-                <button class="px-4 py-2 bg-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest text-brand-purple">Semua</button>
-                <button class="px-4 py-2 hover:bg-white/5 rounded-xl text-[10px] font-black uppercase tracking-widest opacity-40 transition">Tools</button>
-                <button class="px-4 py-2 hover:bg-white/5 rounded-xl text-[10px] font-black uppercase tracking-widest opacity-40 transition">Templates</button>
+                <button class="px-5 py-2 bg-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest text-brand-purple">Semua</button>
+                <button class="px-5 py-2 hover:bg-white/5 rounded-xl text-[10px] font-black uppercase tracking-widest opacity-40 transition">Tools</button>
+                <button class="px-5 py-2 hover:bg-white/5 rounded-xl text-[10px] font-black uppercase tracking-widest opacity-40 transition">Templates</button>
             </div>
         </div>
 
         <div id="catalog-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Catalog products will appear here dynamically -->
+            <!-- Catalog products injected by script -->
         </div>
     </section>
+
+    <!-- FOOTER (SMA DENGAN INDEX) -->
+    <footer class="pt-24 pb-12 glass border-t border-white/5 rounded-t-[70px]">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <img src="https://imersnesia.com/wp-content/uploads/2026/05/logoresellerrightfinal.png" alt="Logo" class="w-24 mx-auto mb-10 drop-shadow-[0_0_30px_rgba(168,85,247,0.3)]">
+            <p class="text-[12px] font-black tracking-[0.1em] opacity-40 uppercase mb-4 font-title">© 2026 Produk Reseller Right • Ecosystem iMersFireship.</p>
+            <p class="text-sm text-slate-500 mb-12 max-w-md mx-auto font-body font-medium leading-relaxed italic">Ikuti harga pusat, jaga sistem, jual dengan waras.</p>
+            
+            <div class="flex justify-center gap-8 md:gap-12 pt-8 border-t border-white/5 font-title">
+                <a href="#" class="text-[11px] font-bold hover:text-brand-blue transition tracking-wider uppercase">Imersnesia.com</a>
+                <a href="#" class="text-[11px] font-bold hover:text-brand-purple transition tracking-wider uppercase">Telegram support</a>
+                <a href="#" class="text-[11px] font-bold hover:text-brand-pink transition tracking-wider uppercase">Channel info</a>
+            </div>
+        </div>
+    </footer>
 
     <!-- DATA & RENDER SCRIPT -->
     <script>
         /**
-         * CARA MANAJEMEN PRODUK:
-         * 1. Tambah produk baru di dalam array [] dibawah.
-         * 2. Tanda isPromo: true -> Masuk ke section atas (Penawaran Khusus).
-         * 3. Tanda isPromo: false -> Masuk ke section bawah (Katalog).
-         * 4. Gunakan color: 'orange', 'pink', atau 'blue' untuk warna produk promo.
+         * ==========================================
+         * MANAJEMEN PRODUK TERPUSAT
+         * ==========================================
+         * isPromo: true  -> Masuk Section Penawaran Khusus
+         * isPromo: false -> Masuk Section Katalog Utama
+         * color: 'orange', 'pink', 'blue' (Khusus promo)
          */
         const allProducts = [
-            // --- PRODUK PROMO (MAKSIMAL 3 BIAR RAPI) ---
+            // --- PRODUK PROMO (Isi isPromo: true) ---
             { 
                 id: 1, 
                 isPromo: true, 
@@ -205,7 +251,7 @@
                 urlCheckout: '#' 
             },
 
-            // --- PRODUK KATALOG BIASA ---
+            // --- PRODUK KATALOG UTAMA (Isi isPromo: false) ---
             { id: 4, isPromo: false, title: 'Web Builder Pro', price: 'Rp 499.000', icon: 'monitor', urlDetail: '#', urlCheckout: '#' },
             { id: 5, isPromo: false, title: 'Email Engine X', price: 'Rp 349.000', icon: 'mail', urlDetail: '#', urlCheckout: '#' },
             { id: 6, isPromo: false, title: 'Ads Manager Kit', price: 'Rp 599.000', icon: 'bar-chart', urlDetail: '#', urlCheckout: '#' },
@@ -219,46 +265,56 @@
         const promoContainer = document.getElementById('promo-container');
         const catalogContainer = document.getElementById('catalog-container');
 
-        // Fungsi Render Promo
+        // Logic Render Promo Section
         allProducts.filter(p => p.isPromo).forEach(p => {
-            const colorClass = p.color === 'orange' ? 'brand-orange' : (p.color === 'pink' ? 'brand-pink' : 'brand-blue');
+            const accent = p.color === 'orange' ? 'brand-orange' : (p.color === 'pink' ? 'brand-pink' : 'brand-blue');
             promoContainer.innerHTML += `
-                <div class="glass rounded-[32px] p-8 border-${colorClass}/20 relative overflow-hidden group hover:scale-[1.02] transition-transform">
-                    <div class="absolute -top-4 -right-4 w-24 h-24 bg-${colorClass}/10 blur-2xl rounded-full"></div>
-                    <div class="bg-${colorClass} text-white text-[10px] font-black px-3 py-1 rounded-full absolute top-6 right-6 uppercase tracking-widest">${p.badge}</div>
-                    <div class="w-16 h-16 rounded-2xl glass mb-6 flex items-center justify-center text-${colorClass} shadow-lg">
-                        <i data-lucide="${p.icon}" class="w-8 h-8"></i>
+                <div class="glass rounded-[40px] p-10 border-${accent}/20 relative overflow-hidden group hover:scale-[1.02] transition-all duration-500">
+                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-${accent}/10 blur-3xl rounded-full"></div>
+                    <div class="bg-${accent} text-white text-[10px] font-black px-4 py-1.5 rounded-full absolute top-8 right-8 uppercase tracking-[0.2em] shadow-lg shadow-${accent}/20">
+                        ${p.badge}
                     </div>
-                    <h3 class="text-xl font-black font-title mb-3">${p.title}</h3>
-                    <p class="text-xs text-slate-500 font-medium mb-6 font-body leading-relaxed">${p.desc}</p>
-                    <div class="flex items-center justify-between mt-auto">
+                    <div class="w-20 h-20 rounded-3xl glass mb-10 flex items-center justify-center text-${accent} shadow-2xl border-${accent}/10">
+                        <i data-lucide="${p.icon}" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-2xl font-black font-title mb-4 tracking-tight">${p.title}</h3>
+                    <p class="text-sm text-slate-500 font-medium mb-10 font-body leading-relaxed opacity-80">${p.desc}</p>
+                    <div class="flex items-center justify-between mt-auto border-t border-white/5 pt-6">
                         <div>
-                            <p class="text-[10px] uppercase font-black opacity-40">Status</p>
-                            <p class="text-lg font-black highlight-text tracking-tighter">${p.price}</p>
+                            <p class="text-[10px] uppercase font-black opacity-30 tracking-widest mb-1">Profit Status</p>
+                            <p class="text-xl font-black highlight-text tracking-tighter">${p.price}</p>
                         </div>
-                        <a href="${p.urlDetail}" class="bg-white/5 hover:bg-white/10 p-3 rounded-xl border border-white/10 transition shadow-inner">
-                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        <a href="${p.urlDetail}" class="bg-${accent}/10 hover:bg-${accent} hover:text-white p-4 rounded-2xl border border-${accent}/20 transition-all duration-300 shadow-inner group-hover:rotate-12">
+                            <i data-lucide="arrow-right" class="w-6 h-6"></i>
                         </a>
                     </div>
                 </div>
             `;
         });
 
-        // Fungsi Render Katalog
+        // Logic Render Catalog Section
         allProducts.filter(p => !p.isPromo).forEach(p => {
             catalogContainer.innerHTML += `
-                <div class="glass rounded-[32px] p-6 border-white/5 hover:border-brand-purple/20 transition-all flex flex-col group">
+                <div class="glass rounded-[32px] p-6 border-white/5 hover:border-brand-purple/30 transition-all flex flex-col group">
+                    <!-- Square Image Placeholder -->
                     <div class="aspect-square bg-white/5 rounded-2xl mb-6 flex items-center justify-center border border-white/5 overflow-hidden relative">
-                        <i data-lucide="${p.icon}" class="w-16 h-16 text-brand-purple/40 group-hover:scale-110 group-hover:text-brand-purple transition-all duration-500"></i>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+                        <i data-lucide="${p.icon}" class="w-16 h-16 text-brand-purple/20 group-hover:scale-110 group-hover:text-brand-purple/40 transition-all duration-500"></i>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                        <div class="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
+                             <div class="text-[8px] font-black text-white/50 uppercase tracking-[0.3em]">Verified Product</div>
+                        </div>
                     </div>
-                    <h4 class="font-black text-lg font-title mb-2 tracking-tight">${p.title}</h4>
-                    <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest mb-4">Reseller Right License</p>
-                    <div class="mt-auto pt-4 border-t border-white/5">
-                        <p class="text-sm font-black highlight-text mb-4 tracking-tighter">${p.price}</p>
+                    <h4 class="font-black text-lg font-title mb-1 tracking-tight text-slate-900 dark:text-white">${p.title}</h4>
+                    <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest mb-6">Reseller Right License</p>
+                    
+                    <div class="mt-auto pt-5 border-t border-white/5">
+                        <div class="flex items-center justify-between mb-5">
+                            <p class="text-base font-black highlight-text tracking-tighter">${p.price}</p>
+                            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-500/50"></i>
+                        </div>
                         <div class="grid grid-cols-2 gap-3">
-                            <a href="${p.urlDetail}" class="text-center bg-white/5 hover:bg-white/10 text-[10px] font-black uppercase tracking-widest py-3 rounded-xl border border-white/10 transition shadow-inner">Detail</a>
-                            <a href="${p.urlCheckout}" class="text-center bg-gradient-to-r from-brand-orange to-brand-pink text-white text-[10px] font-black uppercase tracking-widest py-3 rounded-xl shadow-lg shadow-brand-orange/20 hover:brightness-110 transition">Checkout</a>
+                            <a href="${p.urlDetail}" class="text-center bg-white/5 hover:bg-white/10 text-[10px] font-black uppercase tracking-widest py-3.5 rounded-xl border border-white/10 transition shadow-inner">Detail</a>
+                            <a href="${p.urlCheckout}" class="text-center bg-gradient-to-r from-brand-orange to-brand-pink text-white text-[10px] font-black uppercase tracking-widest py-3.5 rounded-xl shadow-lg shadow-brand-orange/20 hover:brightness-110 transition active:scale-95">Checkout</a>
                         </div>
                     </div>
                 </div>
@@ -268,20 +324,7 @@
         lucide.createIcons();
     </script>
 
-    <!-- FOOTER -->
-    <footer class="pt-20 pb-12 glass border-t border-white/5 rounded-t-[60px]">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <img src="https://imersnesia.com/wp-content/uploads/2026/05/logoresellerrightfinal.png" alt="Logo" class="w-20 mx-auto mb-8 drop-shadow-[0_0_20px_rgba(168,85,247,0.3)]">
-            <p class="text-[10px] font-black tracking-[0.1em] opacity-40 mb-4 font-title">© 2026 Produk Reseller Right • Ecosystem iMersFireship.</p>
-            <p class="text-xs text-slate-500 mb-8 max-w-md mx-auto font-body font-medium leading-relaxed italic">Ikuti harga pusat, jaga sistem, jual dengan waras.</p>
-            <div class="flex justify-center gap-8 pt-8 border-t border-white/5 font-title">
-                <a href="#" class="text-[10px] font-bold hover:text-brand-blue transition tracking-wider uppercase">Imersnesia.com</a>
-                <a href="#" class="text-[10px] font-bold hover:text-brand-purple transition tracking-wider uppercase">Telegram support</a>
-                <a href="#" class="text-[10px] font-bold hover:text-brand-pink transition tracking-wider uppercase">Channel info</a>
-            </div>
-        </div>
-    </footer>
-
+    <!-- THEME & SCROLL LOGIC -->
     <script>
         const themeToggle = document.getElementById('theme-toggle');
         const html = document.documentElement;
@@ -314,8 +357,8 @@
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
-                nav.classList.remove('py-4');
                 nav.classList.add('py-2', 'shadow-2xl');
+                nav.classList.remove('py-4');
             } else {
                 nav.classList.add('py-4');
                 nav.classList.remove('py-2', 'shadow-2xl');
