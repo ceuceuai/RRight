@@ -32,7 +32,6 @@
         }
     </script>
     <style>
-        /* Layered Radial Backgrounds */
         body.dark {
             background: 
                 radial-gradient(circle at 12% 8%, rgba(236, 72, 153, 0.15), transparent 28%),
@@ -40,7 +39,6 @@
                 radial-gradient(circle at 50% 100%, rgba(37, 99, 235, 0.15), transparent 32%),
                 #070812;
         }
-        
         .dark .hero-bg {
             background: 
                 radial-gradient(circle at 12% 18%, rgba(168, 85, 247, 0.35), transparent 30%),
@@ -49,8 +47,6 @@
                 radial-gradient(circle at 30% 90%, rgba(236, 72, 153, 0.2), transparent 30%),
                 linear-gradient(135deg, #090014 0%, #080b24 45%, #160016 100%);
         }
-
-        /* 4-Color Gradient Text */
         .highlight-text {
             background: linear-gradient(90deg, #a855f7, #ec4899, #fb923c, #38bdf8);
             -webkit-background-clip: text;
@@ -58,41 +54,18 @@
             color: transparent;
             text-shadow: 0 0 30px rgba(236, 72, 153, 0.2);
         }
-
-        /* Smooth Glassmorphism */
         .glass {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
-        
         .light .glass {
             background: rgba(255, 255, 255, 0.75);
             border: 1px solid rgba(0, 0, 0, 0.05);
             backdrop-filter: blur(12px);
         }
-
-        /* Steps animation arrow */
-        @media (min-width: 768px) {
-            .step-connector::after {
-                content: '→';
-                position: absolute;
-                right: -20px;
-                top: 50%;
-                transform: translateY(-50%);
-                font-size: 24px;
-                opacity: 0.15;
-                color: currentColor;
-            }
-        }
-
-        /* Anti-Italic Global Fix */
-        * {
-            font-style: normal !important;
-        }
-
-        /* Custom Scrollbar */
+        * { font-style: normal !important; }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #a855f7; border-radius: 10px; }
@@ -105,7 +78,7 @@
         <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
             <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center p-1 overflow-hidden shadow-lg border border-white/20">
-                    <img src="https://imersnesia.com/wp-content/uploads/2026/05/logoresellerrightfinal.png" alt="Reseller Rights Logo" id="main-logo" class="w-full h-full object-contain">
+                    <img src="https://imersnesia.com/wp-content/uploads/2026/05/logoresellerrightfinal.png" alt="Logo" id="main-logo" class="w-full h-full object-contain">
                 </div>
                 <div>
                     <span class="text-xl font-black tracking-tighter dark:text-white font-title uppercase">Reseller <span class="highlight-text">RIGHT</span></span>
@@ -158,64 +131,8 @@
             <div class="h-1 w-20 bg-gradient-to-r from-brand-orange to-brand-pink mt-4 rounded-full"></div>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- Promo 1 -->
-            <div class="glass rounded-[32px] p-8 border-brand-orange/20 relative overflow-hidden group hover:scale-[1.02] transition-transform">
-                <div class="absolute -top-4 -right-4 w-24 h-24 bg-brand-orange/10 blur-2xl rounded-full"></div>
-                <div class="bg-gradient-to-r from-brand-orange to-brand-pink text-white text-[10px] font-black px-3 py-1 rounded-full absolute top-6 right-6 uppercase tracking-widest">Best Seller</div>
-                <div class="w-16 h-16 rounded-2xl glass mb-6 flex items-center justify-center text-brand-orange shadow-lg">
-                    <i data-lucide="rocket" class="w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-black font-title mb-3">SaaS Automation Kit</h3>
-                <p class="text-xs text-slate-500 font-medium mb-6 font-body leading-relaxed">Template otomasi bisnis untuk scale up distribusi digital lo tanpa ribet.</p>
-                <div class="flex items-center justify-between mt-auto">
-                    <div>
-                        <p class="text-[10px] uppercase font-black opacity-40">Profit</p>
-                        <p class="text-lg font-black highlight-text tracking-tighter">100% Komisi</p>
-                    </div>
-                    <a href="#" class="bg-white/5 hover:bg-white/10 p-3 rounded-xl border border-white/10 transition shadow-inner">
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Promo 2 -->
-            <div class="glass rounded-[32px] p-8 border-brand-pink/20 relative overflow-hidden group hover:scale-[1.02] transition-transform">
-                <div class="bg-brand-pink text-white text-[10px] font-black px-3 py-1 rounded-full absolute top-6 right-6 uppercase tracking-widest">New Release</div>
-                <div class="w-16 h-16 rounded-2xl glass mb-6 flex items-center justify-center text-brand-pink shadow-lg">
-                    <i data-lucide="layout" class="w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-black font-title mb-3">AI Marketing Assets</h3>
-                <p class="text-xs text-slate-500 font-medium mb-6 font-body leading-relaxed">Aset marketing berbasis AI yang bikin jualan lo jadi kelihatan pro banget.</p>
-                <div class="flex items-center justify-between mt-auto">
-                    <div>
-                        <p class="text-[10px] uppercase font-black opacity-40">Lisensi</p>
-                        <p class="text-lg font-black highlight-text tracking-tighter">Reseller Rights</p>
-                    </div>
-                    <a href="#" class="bg-white/5 hover:bg-white/10 p-3 rounded-xl border border-white/10 transition shadow-inner">
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Promo 3 -->
-            <div class="glass rounded-[32px] p-8 border-brand-blue/20 relative overflow-hidden group hover:scale-[1.02] transition-transform">
-                <div class="bg-brand-blue text-white text-[10px] font-black px-3 py-1 rounded-full absolute top-6 right-6 uppercase tracking-widest">Exclusive</div>
-                <div class="w-16 h-16 rounded-2xl glass mb-6 flex items-center justify-center text-brand-blue shadow-lg">
-                    <i data-lucide="database" class="w-8 h-8"></i>
-                </div>
-                <h3 class="text-xl font-black font-title mb-3">Digital Funnel Lab</h3>
-                <p class="text-xs text-slate-500 font-medium mb-6 font-body leading-relaxed">Struktur funnel distribusi digital yang bikin pembeli lo langsung paham.</p>
-                <div class="flex items-center justify-between mt-auto">
-                    <div>
-                        <p class="text-[10px] uppercase font-black opacity-40">Status</p>
-                        <p class="text-lg font-black highlight-text tracking-tighter">Ready To Sell</p>
-                    </div>
-                    <a href="#" class="bg-white/5 hover:bg-white/10 p-3 rounded-xl border border-white/10 transition shadow-inner">
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </a>
-                </div>
-            </div>
+        <div id="promo-container" class="grid md:grid-cols-3 gap-8">
+            <!-- Promo products will appear here dynamically -->
         </div>
     </section>
 
@@ -235,59 +152,128 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <script>
-                /**
-                 * CARA MENAMBAH PRODUK BARU:
-                 * 1. Cari baris "const products = [" di bawah ini.
-                 * 2. Copy salah satu baris objek di dalam kurung kurawal { ... }, 
-                 * 3. Paste di bawahnya (jangan lupa tambahkan koma di akhir baris sebelumnya).
-                 * 4. Ganti id (harus unik), title, price, icon (dari lucide icons), urlDetail, dan urlCheckout.
-                 */
-                const products = [
-                    { id: 1, title: 'Web Builder Pro', price: 'Rp 499.000', icon: 'monitor', urlDetail: '#', urlCheckout: '#' },
-                    { id: 2, title: 'Email Engine X', price: 'Rp 349.000', icon: 'mail', urlDetail: '#', urlCheckout: '#' },
-                    { id: 3, title: 'Ads Manager Kit', price: 'Rp 599.000', icon: 'bar-chart', urlDetail: '#', urlCheckout: '#' },
-                    { id: 4, title: 'Content AI Bot', price: 'Rp 299.000', icon: 'message-square', urlDetail: '#', urlCheckout: '#' },
-                    { id: 5, title: 'SEO Booster V3', price: 'Rp 449.000', icon: 'search', urlDetail: '#', urlCheckout: '#' },
-                    { id: 6, title: 'Lead Gen Vault', price: 'Rp 399.000', icon: 'user-plus', urlDetail: '#', urlCheckout: '#' },
-                    { id: 7, title: 'Social Auto Post', price: 'Rp 249.000', icon: 'share-2', urlDetail: '#', urlCheckout: '#' },
-                    { id: 8, title: 'Funnel Blueprint', price: 'Rp 699.000', icon: 'git-branch', urlDetail: '#', urlCheckout: '#' },
-                    // TAMBAHKAN DI SINI (CONTOH):
-                    // { id: 9, title: 'Nama Produk Baru', price: 'Rp 100.000', icon: 'box', urlDetail: 'link-detail', urlCheckout: 'link-beli' },
-                ];
-
-                products.forEach(p => {
-                    document.write(`
-                        <div class="glass rounded-[32px] p-6 border-white/5 hover:border-brand-purple/20 transition-all flex flex-col group">
-                            <div class="aspect-square bg-white/5 rounded-2xl mb-6 flex items-center justify-center border border-white/5 overflow-hidden relative">
-                                <i data-lucide="${p.icon}" class="w-16 h-16 text-brand-purple/40 group-hover:scale-110 group-hover:text-brand-purple transition-all duration-500"></i>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
-                            </div>
-                            <h4 class="font-black text-lg font-title mb-2 tracking-tight">${p.title}</h4>
-                            <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest mb-4">Reseller Right License</p>
-                            
-                            <div class="mt-auto pt-4 border-t border-white/5">
-                                <p class="text-sm font-black highlight-text mb-4 tracking-tighter">${p.price}</p>
-                                <div class="grid grid-cols-2 gap-3">
-                                    <a href="${p.urlDetail}" class="text-center bg-white/5 hover:bg-white/10 text-[10px] font-black uppercase tracking-widest py-3 rounded-xl border border-white/10 transition shadow-inner">Detail</a>
-                                    <a href="${p.urlCheckout}" class="text-center bg-gradient-to-r from-brand-orange to-brand-pink text-white text-[10px] font-black uppercase tracking-widest py-3 rounded-xl shadow-lg shadow-brand-orange/20 hover:brightness-110 transition">Checkout</a>
-                                </div>
-                            </div>
-                        </div>
-                    `);
-                });
-            </script>
+        <div id="catalog-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Catalog products will appear here dynamically -->
         </div>
     </section>
 
-    <!-- FOOTER (SMA DENGAN INDEX) -->
+    <!-- DATA & RENDER SCRIPT -->
+    <script>
+        /**
+         * CARA MANAJEMEN PRODUK:
+         * 1. Tambah produk baru di dalam array [] dibawah.
+         * 2. Tanda isPromo: true -> Masuk ke section atas (Penawaran Khusus).
+         * 3. Tanda isPromo: false -> Masuk ke section bawah (Katalog).
+         * 4. Gunakan color: 'orange', 'pink', atau 'blue' untuk warna produk promo.
+         */
+        const allProducts = [
+            // --- PRODUK PROMO (MAKSIMAL 3 BIAR RAPI) ---
+            { 
+                id: 1, 
+                isPromo: true, 
+                badge: 'Best Seller', 
+                color: 'orange', 
+                title: 'SaaS Automation Kit', 
+                desc: 'Template otomasi bisnis untuk scale up distribusi digital lo tanpa ribet.', 
+                price: '100% Komisi', 
+                icon: 'rocket', 
+                urlDetail: '#', 
+                urlCheckout: '#' 
+            },
+            { 
+                id: 2, 
+                isPromo: true, 
+                badge: 'New Release', 
+                color: 'pink', 
+                title: 'AI Marketing Assets', 
+                desc: 'Aset marketing berbasis AI yang bikin jualan lo jadi kelihatan pro banget.', 
+                price: 'Reseller Rights', 
+                icon: 'layout', 
+                urlDetail: '#', 
+                urlCheckout: '#' 
+            },
+            { 
+                id: 3, 
+                isPromo: true, 
+                badge: 'Exclusive', 
+                color: 'blue', 
+                title: 'Digital Funnel Lab', 
+                desc: 'Struktur funnel distribusi digital yang bikin pembeli lo langsung paham.', 
+                price: 'Ready To Sell', 
+                icon: 'database', 
+                urlDetail: '#', 
+                urlCheckout: '#' 
+            },
+
+            // --- PRODUK KATALOG BIASA ---
+            { id: 4, isPromo: false, title: 'Web Builder Pro', price: 'Rp 499.000', icon: 'monitor', urlDetail: '#', urlCheckout: '#' },
+            { id: 5, isPromo: false, title: 'Email Engine X', price: 'Rp 349.000', icon: 'mail', urlDetail: '#', urlCheckout: '#' },
+            { id: 6, isPromo: false, title: 'Ads Manager Kit', price: 'Rp 599.000', icon: 'bar-chart', urlDetail: '#', urlCheckout: '#' },
+            { id: 7, isPromo: false, title: 'Content AI Bot', price: 'Rp 299.000', icon: 'message-square', urlDetail: '#', urlCheckout: '#' },
+            { id: 8, isPromo: false, title: 'SEO Booster V3', price: 'Rp 449.000', icon: 'search', urlDetail: '#', urlCheckout: '#' },
+            { id: 9, isPromo: false, title: 'Lead Gen Vault', price: 'Rp 399.000', icon: 'user-plus', urlDetail: '#', urlCheckout: '#' },
+            { id: 10, isPromo: false, title: 'Social Auto Post', price: 'Rp 249.000', icon: 'share-2', urlDetail: '#', urlCheckout: '#' },
+            { id: 11, isPromo: false, title: 'Funnel Blueprint', price: 'Rp 699.000', icon: 'git-branch', urlDetail: '#', urlCheckout: '#' },
+        ];
+
+        const promoContainer = document.getElementById('promo-container');
+        const catalogContainer = document.getElementById('catalog-container');
+
+        // Fungsi Render Promo
+        allProducts.filter(p => p.isPromo).forEach(p => {
+            const colorClass = p.color === 'orange' ? 'brand-orange' : (p.color === 'pink' ? 'brand-pink' : 'brand-blue');
+            promoContainer.innerHTML += `
+                <div class="glass rounded-[32px] p-8 border-${colorClass}/20 relative overflow-hidden group hover:scale-[1.02] transition-transform">
+                    <div class="absolute -top-4 -right-4 w-24 h-24 bg-${colorClass}/10 blur-2xl rounded-full"></div>
+                    <div class="bg-${colorClass} text-white text-[10px] font-black px-3 py-1 rounded-full absolute top-6 right-6 uppercase tracking-widest">${p.badge}</div>
+                    <div class="w-16 h-16 rounded-2xl glass mb-6 flex items-center justify-center text-${colorClass} shadow-lg">
+                        <i data-lucide="${p.icon}" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-black font-title mb-3">${p.title}</h3>
+                    <p class="text-xs text-slate-500 font-medium mb-6 font-body leading-relaxed">${p.desc}</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <div>
+                            <p class="text-[10px] uppercase font-black opacity-40">Status</p>
+                            <p class="text-lg font-black highlight-text tracking-tighter">${p.price}</p>
+                        </div>
+                        <a href="${p.urlDetail}" class="bg-white/5 hover:bg-white/10 p-3 rounded-xl border border-white/10 transition shadow-inner">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            `;
+        });
+
+        // Fungsi Render Katalog
+        allProducts.filter(p => !p.isPromo).forEach(p => {
+            catalogContainer.innerHTML += `
+                <div class="glass rounded-[32px] p-6 border-white/5 hover:border-brand-purple/20 transition-all flex flex-col group">
+                    <div class="aspect-square bg-white/5 rounded-2xl mb-6 flex items-center justify-center border border-white/5 overflow-hidden relative">
+                        <i data-lucide="${p.icon}" class="w-16 h-16 text-brand-purple/40 group-hover:scale-110 group-hover:text-brand-purple transition-all duration-500"></i>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+                    </div>
+                    <h4 class="font-black text-lg font-title mb-2 tracking-tight">${p.title}</h4>
+                    <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest mb-4">Reseller Right License</p>
+                    <div class="mt-auto pt-4 border-t border-white/5">
+                        <p class="text-sm font-black highlight-text mb-4 tracking-tighter">${p.price}</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <a href="${p.urlDetail}" class="text-center bg-white/5 hover:bg-white/10 text-[10px] font-black uppercase tracking-widest py-3 rounded-xl border border-white/10 transition shadow-inner">Detail</a>
+                            <a href="${p.urlCheckout}" class="text-center bg-gradient-to-r from-brand-orange to-brand-pink text-white text-[10px] font-black uppercase tracking-widest py-3 rounded-xl shadow-lg shadow-brand-orange/20 hover:brightness-110 transition">Checkout</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        lucide.createIcons();
+    </script>
+
+    <!-- FOOTER -->
     <footer class="pt-20 pb-12 glass border-t border-white/5 rounded-t-[60px]">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <img src="https://imersnesia.com/wp-content/uploads/2026/05/logoresellerrightfinal.png" alt="Logo" class="w-20 mx-auto mb-8 drop-shadow-[0_0_20px_rgba(168,85,247,0.3)]">
             <p class="text-[10px] font-black tracking-[0.1em] opacity-40 mb-4 font-title">© 2026 Produk Reseller Right • Ecosystem iMersFireship.</p>
             <p class="text-xs text-slate-500 mb-8 max-w-md mx-auto font-body font-medium leading-relaxed italic">Ikuti harga pusat, jaga sistem, jual dengan waras.</p>
-            
             <div class="flex justify-center gap-8 pt-8 border-t border-white/5 font-title">
                 <a href="#" class="text-[10px] font-bold hover:text-brand-blue transition tracking-wider uppercase">Imersnesia.com</a>
                 <a href="#" class="text-[10px] font-bold hover:text-brand-purple transition tracking-wider uppercase">Telegram support</a>
@@ -297,8 +283,6 @@
     </footer>
 
     <script>
-        lucide.createIcons();
-
         const themeToggle = document.getElementById('theme-toggle');
         const html = document.documentElement;
         const darkIcon = document.getElementById('theme-icon-dark');
