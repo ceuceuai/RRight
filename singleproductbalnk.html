@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nama Produk - Detail Produk Digital</title>
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts: Montserrat, Poppins, Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            purple: '#a855f7',
+                            pink: '#ec4899',
+                            orange: '#fb923c',
+                            blue: '#38bdf8',
+                            dark: '#070812',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        title: ['Montserrat', 'sans-serif'],
+                        body: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background: 
+                radial-gradient(circle at 12% 8%, rgba(236, 72, 153, 0.15), transparent 28%),
+                radial-gradient(circle at 88% 12%, rgba(249, 115, 22, 0.12), transparent 30%),
+                radial-gradient(circle at 50% 100%, rgba(37, 99, 235, 0.15), transparent 32%),
+                #070812;
+            color: white;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Anti-Italic Global Fix */
+        * { font-style: normal !important; text-transform: none !important; }
+
+        /* Smooth Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* 4-Color Gradient Text */
+        .highlight-text {
+            background: linear-gradient(90deg, #fb923c, #ec4899, #a855f7, #38bdf8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent !important;
+            display: inline-block;
+        }
+
+        .btn-gradient {
+            background: linear-gradient(135deg, #fb923c, #ec4899, #a855f7);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gradient:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px -5px rgba(236, 72, 153, 0.5);
+        }
+
+        /* Tab Active Styling */
+        .tab-btn.active {
+            color: #a855f7;
+            background: rgba(168, 85, 247, 0.1);
+            border-color: rgba(168, 85, 247, 0.3);
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(168, 85, 247, 0.2); border-radius: 10px; }
+    </style>
+</head>
+<body class="overflow-x-hidden font-sans">
+
+    <!-- HEADER -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/5 py-4">
+        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-brand-purple rounded-xl flex items-center justify-center border border-white/10 shadow-lg">
+                    <i data-lucide="crown" class="text-white w-5 h-5"></i>
+                </div>
+                <span class="text-lg font-black font-title tracking-tighter">Reseller <span class="highlight-text">Right</span></span>
+            </div>
+
+            <!-- Mobile Katalog Link -->
+            <a href="product.html" class="text-xs font-bold opacity-50 hover:opacity-100 transition flex items-center gap-2">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Katalog
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="pt-40 pb-20 px-6 max-w-7xl mx-auto border-b border-white/5">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="relative group">
+                <div class="absolute inset-0 bg-brand-purple/20 blur-[100px] rounded-full"></div>
+                <div class="relative glass rounded-[40px] p-4 border-white/10 shadow-2xl overflow-hidden aspect-square flex items-center justify-center">
+                    <img src="https://via.placeholder.com/600x600/0f172a/ffffff?text=Product+Mockup" alt="Mockup Produk" class="w-4/5 h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-brand-orange text-[10px] font-black mb-8 tracking-[0.1em] border-brand-orange/20">
+                    <i data-lucide="star" class="w-3 h-3 fill-brand-orange"></i> Produk reseller right pilihan
+                </div>
+                
+                <h1 class="text-4xl md:text-6xl font-black font-title mb-6 leading-tight tracking-tighter">
+                    <span class="highlight-text">SaaS Automation</span> Kit Premium
+                </h1>
+                <p class="text-white/50 text-lg font-medium leading-relaxed mb-10">
+                    Sistem otomasi bisnis paling lengkap untuk scale up distribusi produk digital lo tanpa bangun dari nol.
+                </p>
+
+                <div class="glass rounded-3xl p-8 border-white/10 mb-10 flex flex-col sm:flex-row items-center justify-between gap-8">
+                    <div>
+                        <p class="text-[10px] font-black opacity-30 mb-1 tracking-widest">Harga investasi</p>
+                        <p class="text-3xl font-black font-title">Rp 499.000</p>
+                    </div>
+                    <a href="#" class="w-full sm:w-auto px-10 py-5 rounded-2xl btn-gradient text-white font-black text-xs tracking-widest flex items-center justify-center gap-3 shadow-lg">
+                        Dapatkan sekarang <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TABBED NAVIGATION & CONTENT -->
+    <section class="py-20 px-6 max-w-5xl mx-auto">
+        <!-- Tabs Menu -->
+        <div class="flex flex-wrap justify-center gap-3 mb-16 p-2 glass rounded-3xl border-white/5">
+            <button onclick="switchTab('deskripsi')" id="btn-deskripsi" class="tab-btn active px-8 py-4 rounded-2xl text-[11px] font-black tracking-widest border border-transparent transition-all duration-300">Deskripsi</button>
+            <button onclick="switchTab('benefit')" id="btn-benefit" class="tab-btn px-8 py-4 rounded-2xl text-[11px] font-black tracking-widest border border-transparent transition-all duration-300">Benefit</button>
+            <button onclick="switchTab('fitur')" id="btn-fitur" class="tab-btn px-8 py-4 rounded-2xl text-[11px] font-black tracking-widest border border-transparent transition-all duration-300">Fitur</button>
+            <button onclick="switchTab('faq')" id="btn-faq" class="tab-btn px-8 py-4 rounded-2xl text-[11px] font-black tracking-widest border border-transparent transition-all duration-300">Faq</button>
+        </div>
+
+        <!-- Tab Contents -->
+        <div class="glass p-10 md:p-16 rounded-[40px] border-white/5 min-h-[400px]">
+            
+            <!-- Deskripsi Tab -->
+            <div id="content-deskripsi" class="tab-content block animate-in">
+                <h2 class="text-2xl font-black font-title mb-8 highlight-text">Tentang produk ini</h2>
+                <div class="prose prose-invert max-w-none mb-16">
+                    <p class="text-white/50 leading-relaxed font-medium mb-6">
+                        Produk ini dirancang khusus untuk mempermudah distribusi digital lo. Dengan sistem yang sudah matang, lo tinggal fokus ke strategi jualan tanpa perlu pusing teknis.
+                    </p>
+                    <p class="text-white/50 leading-relaxed font-medium">
+                        Setiap baris kode dan elemen marketing dalam paket ini dibuat dengan standar tinggi untuk memastikan konversi penjualan yang maksimal bagi setiap reseller.
+                    </p>
+                </div>
+
+                <h3 class="text-lg font-black font-title mb-8 opacity-30 tracking-[0.2em]">Apa yang lo dapetin?</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="p-6 rounded-2xl bg-white/2 border border-white/5">
+                        <h4 class="font-black text-sm mb-2 text-brand-purple">Source code lengkap</h4>
+                        <p class="text-xs text-white/40 leading-relaxed">Akses penuh ke semua baris kode tanpa dienkripsi, bebas modifikasi.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/2 border border-white/5">
+                        <h4 class="font-black text-sm mb-2 text-brand-pink">Marketing kit ready</h4>
+                        <p class="text-xs text-white/40 leading-relaxed">Banner promosi, copywriting, dan aset visual untuk jualan lo.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/2 border border-white/5">
+                        <h4 class="font-black text-sm mb-2 text-brand-orange">Grup support eksklusif</h4>
+                        <p class="text-xs text-white/40 leading-relaxed">Akses ke komunitas khusus para owner untuk diskusi strategi bisnis.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/2 border border-white/5">
+                        <h4 class="font-black text-sm mb-2 text-brand-blue">Video instalasi</h4>
+                        <p class="text-xs text-white/40 leading-relaxed">Panduan langkah demi langkah cara pasang sistem di hosting lo sendiri.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefit Tab -->
+            <div id="content-benefit" class="tab-content hidden animate-in">
+                <h2 class="text-2xl font-black font-title mb-8 highlight-text">Keuntungan buat lo</h2>
+                <div class="space-y-6">
+                    <div class="flex gap-5 border-b border-white/5 pb-6">
+                        <div class="w-1.5 h-6 bg-brand-purple rounded-full"></div>
+                        <div>
+                            <p class="font-bold text-base mb-1">Hemat waktu dan biaya</p>
+                            <p class="text-xs text-white/40 leading-relaxed">Lo gak perlu lagi ngabisin waktu berbulan-bulan cuma buat riset produk dan ngebangun sistem dari awal.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-5 border-b border-white/5 pb-6">
+                        <div class="w-1.5 h-6 bg-brand-pink rounded-full"></div>
+                        <div>
+                            <p class="font-bold text-base mb-1">Profit milik lo 100%</p>
+                            <p class="text-xs text-white/40 leading-relaxed">Beda sama sistem affiliasi, setiap rupiah yang masuk dari pembeli lo adalah hak milik lo sepenuhnya.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-5 border-b border-white/5 pb-6">
+                        <div class="w-1.5 h-6 bg-brand-orange rounded-full"></div>
+                        <div>
+                            <p class="font-bold text-base mb-1">Branding makin pro</p>
+                            <p class="text-xs text-white/40 leading-relaxed">Punya produk digital berkualitas bikin nama bisnis lo makin terpercaya di mata pembeli.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fitur Tab -->
+            <div id="content-fitur" class="tab-content hidden animate-in">
+                <h2 class="text-2xl font-black font-title mb-8 highlight-text">Fitur utama paket</h2>
+                <div class="grid md:grid-cols-2 gap-10">
+                    <div class="space-y-4">
+                        <h4 class="font-black text-sm text-brand-purple">Panel kontrol admin</h4>
+                        <p class="text-xs text-white/40 leading-relaxed">Kelola member dan data pembeli lo dengan satu dashboard yang sangat simpel dan mudah dipahami.</p>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-black text-sm text-brand-pink">Sistem lisensi otomatis</h4>
+                        <p class="text-xs text-white/40 leading-relaxed">Memberikan akses secara otomatis setelah pembayaran terverifikasi tanpa lo harus kirim manual.</p>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-black text-sm text-brand-orange">Laporan penjualan real-time</h4>
+                        <p class="text-xs text-white/40 leading-relaxed">Pantau pertumbuhan bisnis lo setiap detik melalui grafik laporan yang sangat akurat.</p>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-black text-sm text-brand-blue">Integrasi sistem pembayaran</h4>
+                        <p class="text-xs text-white/40 leading-relaxed">Mendukung berbagai metode pembayaran populer untuk memudahkan pembeli lo checkout.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Tab -->
+            <div id="content-faq" class="tab-content hidden animate-in">
+                <h2 class="text-2xl font-black font-title mb-8 highlight-text">Tanya jawab produk</h2>
+                <div class="space-y-6">
+                    <div class="p-6 rounded-2xl bg-white/2 border border-white/5">
+                        <p class="font-bold text-xs mb-3 text-white">Apakah butuh keahlian coding?</p>
+                        <p class="text-xs text-white/40 leading-relaxed">Nggak perlu bro. Udah ada panduan lengkap dan sistemnya tinggal install aja di hosting.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/2 border border-white/5">
+                        <p class="font-bold text-xs mb-3 text-white">Apa bisa minta bantuan instalasi?</p>
+                        <p class="text-xs text-white/40 leading-relaxed">Bisa banget, tim support kita siap bantu lo kalau ada kendala teknis saat setup pertama kali.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/2 border border-white/5">
+                        <p class="font-bold text-xs mb-3 text-white">Apakah ada biaya berlangganan?</p>
+                        <p class="text-xs text-white/40 leading-relaxed">Sekali beli dapet akses selamanya. No hidden fees, no recurring cost.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LICENSE SECTION -->
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="glass rounded-[40px] p-10 lg:p-16 border-brand-pink/20 bg-gradient-to-br from-brand-pink/5 to-transparent relative overflow-hidden">
+            <div class="absolute -top-20 -right-20 w-64 h-64 bg-brand-pink/10 blur-[100px] rounded-full"></div>
+            
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="flex-1 text-center lg:text-left">
+                    <h2 class="text-3xl md:text-4xl font-black font-title mb-4 text-brand-pink">Lisensi reseller right</h2>
+                    <p class="text-white/50 text-base leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0 font-medium">
+                        Produk ini dilindungi lisensi resmi. Lo bukan cuma beli produk, tapi beli hak untuk membangun aset digital lo sendiri.
+                    </p>
+                    
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3 p-5 glass border-white/5 rounded-2xl">
+                            <i data-lucide="check" class="text-emerald-500 w-5 h-5"></i>
+                            <span class="text-[11px] font-black tracking-widest opacity-80 uppercase">Jual lagi 100% profit</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-5 glass border-white/5 rounded-2xl">
+                            <i data-lucide="check" class="text-emerald-500 w-5 h-5"></i>
+                            <span class="text-[11px] font-black tracking-widest opacity-80 uppercase">Gunakan di unlimited project</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-5 glass border-white/10 bg-white/2 rounded-2xl">
+                            <i data-lucide="x" class="text-red-500 w-5 h-5"></i>
+                            <span class="text-[11px] font-black tracking-widest opacity-40 line-through uppercase">Dilarang rebrand total</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-5 glass border-white/10 bg-white/2 rounded-2xl">
+                            <i data-lucide="x" class="text-red-500 w-5 h-5"></i>
+                            <span class="text-[11px] font-black tracking-widest opacity-40 line-through uppercase">Dilarang bagi gratis</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full lg:w-80">
+                    <div class="glass p-10 rounded-[40px] border-white/20 text-center flex flex-col gap-8 shadow-2xl">
+                        <i data-lucide="shield-check" class="w-20 h-20 text-brand-pink mx-auto"></i>
+                        <div>
+                            <p class="text-[10px] font-black uppercase tracking-[0.3em] text-white/30 mb-2">Verified security</p>
+                            <p class="text-sm font-bold">Produk aman & bebas malware</p>
+                        </div>
+                        <button class="w-full py-4 glass border-white/10 hover:bg-white/5 rounded-2xl text-[10px] font-black tracking-widest uppercase">Download license pdf</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="pt-24 pb-12 glass border-t border-white/5 rounded-t-[70px]">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <img src="https://imersnesia.com/wp-content/uploads/2026/05/logoresellerrightfinal.png" alt="Logo" class="w-24 mx-auto mb-10 drop-shadow-[0_0_30px_rgba(168,85,247,0.4)]">
+            <p class="text-[12px] font-black tracking-[0.4em] opacity-40 uppercase mb-4 font-title">© 2026 Produk Reseller Right • Ecosystem iMersFireship.</p>
+            <p class="text-xs text-white/30 mb-12 max-w-md mx-auto font-body font-medium leading-relaxed italic-none">Ikuti harga pusat, jaga sistem, jual dengan waras. Solusi tepat untuk bisnis produk digital tanpa batas.</p>
+            
+            <div class="flex flex-wrap justify-center gap-8 md:gap-12 pt-10 border-t border-white/5 font-title">
+                <a href="#" class="text-[11px] font-bold hover:text-brand-blue transition tracking-wider uppercase">Imersnesia.com</a>
+                <a href="#" class="text-[11px] font-bold hover:text-brand-purple transition tracking-wider uppercase">Telegram support</a>
+                <a href="#" class="text-[11px] font-bold hover:text-brand-pink transition tracking-wider uppercase">Channel info</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            // Hide all contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            // Remove active from all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show active content
+            document.getElementById('content-' + tabId).classList.remove('hidden');
+            // Set active button
+            document.getElementById('btn-' + tabId).classList.add('active');
+        }
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2', 'shadow-2xl');
+                nav.classList.remove('py-4');
+            } else {
+                nav.classList.add('py-4');
+                nav.classList.remove('py-2', 'shadow-2xl');
+            }
+        });
+    </script>
+</body>
+</html>
